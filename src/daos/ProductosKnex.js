@@ -1,4 +1,8 @@
+const dotenv = require('dotenv').config()
 const { options } = require('../../options/mariaDB')
+options.connection.user = 'root'
+options.connection.password = '1234'
+console.log(options)
 const knex = require('knex')(options)
 
 class ProductosKnex {
