@@ -2,11 +2,12 @@
 const {MongoClient} = require ('mongodb');
 const {database} = require("../../options/mongoDB");
 
+const stringConection = database.url.replace('<username>', process.env.MONGO_DB_USER).replace('<password>', process.env.MONGO_DB_PASSWORD)
 
 class Mongo {
 
     constructor() {
-        const client = new MongoClient(database.url, { serverSelectionTimeOutMS: 5000 });
+        const client = new MongoClient(stringConection, { serverSelectionTimeOutMS: 5000 });
 
         client.connect();
 
