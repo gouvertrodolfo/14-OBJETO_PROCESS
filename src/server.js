@@ -14,14 +14,16 @@ const args = yargs
 .boolean('user_mongo')
 .argv
 
-console.log(args)
+
 
 /**************************************************************************************** */
 const { apiProductos } = require("./routes/apiProductos")
 const { apiProductosTest } = require("./routes/apiProductosTest")
 const { webProductos } = require("./routes/webProductos")
 const { webProductosTest } = require("./routes/webProductosTest")
-// const { webLogin } = require("./routes/webLogin")
+const { info } = require("./routes/info")
+const { apiRandom } = require("./routes/apiRandom")
+
 const routes = require('./routes/routes');
 const { passport } = require("./api/MyPassportLocal")
 const controllersdb = require('./daos/mongoose');
@@ -90,6 +92,8 @@ app.use('/api/productosTest', apiProductosTest)
 
 app.use('/', webProductos)
 app.use('/test', webProductosTest)
+app.use('/info', info)  
+app.use('/api/random', apiRandom)
 
 // rutas de login manual usuario MariaDB
 // app.use('/login', webLogin)
