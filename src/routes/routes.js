@@ -48,7 +48,7 @@ function getLogout(req, res) {
 
 function failRoute(req, res) {
   const title = 'ROUTING ERROR';
-  res.status(404).res.render('pages/error', { titulo: title });
+  res.status(404).render('pages/error', { titulo: title });
 }
 
 module.exports = {
