@@ -16,6 +16,7 @@ apiRandom.get('/:cant', (req, res) => {
 
 apiRandom.get('/', (req, res) => {
     random.send(100000000)
+    random.send(cant)
     random.on('message', resultado => {
         res.json(resultado)
     })
