@@ -37,6 +37,7 @@ function getFaillogin(req, res) {
 
 function getFailsignup(req, res) {
   const title = 'USER ERROR SIGNUP';
+  
   res.render('pages/error', { titulo: title });
 }
 
